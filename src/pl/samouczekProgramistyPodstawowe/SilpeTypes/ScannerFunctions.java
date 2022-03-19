@@ -2,6 +2,7 @@ package pl.samouczekProgramistyPodstawowe.SilpeTypes;
 
 import pl.samouczekProgramistyPodstawowe.pętle.IfWhile;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ScannerFunctions {
@@ -38,6 +39,7 @@ public class ScannerFunctions {
         for (int arra : array) {
             System.out.print(arra + " ");
         }
+        System.out.println(Arrays.toString(array));
     }
 
     public static void putStringAndMakeSTH() {
