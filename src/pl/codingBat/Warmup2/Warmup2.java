@@ -386,7 +386,19 @@ public class Warmup2 {
     }
 
     public String startWord(String str, String word) {
+        if (str.length() == 0) {
+            return str;
+        }
+
+        String beginning = str.substring(1);
+        if (beginning.startsWith(word.substring(1))) {
+            return str.substring(0, word.length());
+        }
+
         return "";
     }
 
+    public String withoutX(String str) {
+        return "";
+    }
 }
