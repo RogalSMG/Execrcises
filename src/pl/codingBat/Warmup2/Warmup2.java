@@ -351,8 +351,54 @@ public class Warmup2 {
         return first2 + first2 + first2;
     }
 
+    public String without2(String str) {
+        if (str.length() < 2) {
+            return str;
+        }
+        String ending = str.substring(str.length() - 2);
+        if (str.startsWith(ending)) {
+            return str.substring(2);
+        } else {
+            return str;
+        }
+
+    }
+
+    public String deFront(String str) {
+        if (str.length() == 0) {
+            return str;
+        }
+
+        String a = "";
+        if (str.charAt(0) == 'a') {
+            a = "a";
+        }
+        if (str.length() == 1) {
+            return a;
+        }
+
+        String b = "";
+        if (str.charAt(1) == 'b') {
+            b = "b";
+        }
+        System.out.println(a);
+        return a + b + str.substring(2);
+    }
+
     public String startWord(String str, String word) {
+        if (str.length() == 0) {
+            return str;
+        }
+
+        String beginning = str.substring(1);
+        if (beginning.startsWith(word.substring(1))) {
+            return str.substring(0, word.length());
+        }
+
         return "";
     }
 
+    public String withoutX(String str) {
+        return "";
+    }
 }
