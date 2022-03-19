@@ -341,5 +341,13 @@ public class Warmup2 {
         }
     }
 
-
+    public String extraFront(String str) {
+        String first2;
+        if (str.length() < 3) {
+            first2 = str;
+        } else {
+            first2 = str.substring(0, 2);
+        }
+        return first2 + first2 + first2;
+    }
 }
