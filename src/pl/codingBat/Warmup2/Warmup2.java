@@ -351,5 +351,8 @@ public class Warmup2 {
         return first2 + first2 + first2;
     }
 
+    public String startWord(String str, String word) {
+        return "";
+    }
 
 }
