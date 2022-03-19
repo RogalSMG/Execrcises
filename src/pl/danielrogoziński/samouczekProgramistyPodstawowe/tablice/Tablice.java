@@ -3,11 +3,11 @@ package pl.danielrogoziński.samouczekProgramistyPodstawowe.tablice;
 public class Tablice {
 
     public static String[] getStringArrayFiveFirstChar() {
-        return new String[] {"a", "b", "c", "d", "e"};
+        return new String[]{"a", "b", "c", "d", "e"};
     }
 
     public static int[] reversArray(int[] arrayIn) {
-        int [] arrayOut = new int[arrayIn.length];
+        int[] arrayOut = new int[arrayIn.length];
         for (int i = 0; i < arrayIn.length; i++) {
             arrayOut[arrayOut.length - 1 - i] = arrayIn[i];
         }

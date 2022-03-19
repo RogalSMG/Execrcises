@@ -11,25 +11,25 @@ class CodingBatTest {
     void testNotString() {
         CodingBat code = new CodingBat();
         assertAll("Testes",
-        () -> assertEquals("not", code.notString("not"))
+                () -> assertEquals("not", code.notString("not"))
         );
     }
 
     @Test
     void frontBack() {
         CodingBat code = new CodingBat();
-        assertEquals("abc",code.frontBack("cba"));
+        assertEquals("abc", code.frontBack("cba"));
     }
 
     @Test
     void testMax1020() {
         CodingBat code = new CodingBat();
-        assertEquals(0,code.max1020(20,21));
+        assertEquals(0, code.max1020(20, 21));
     }
 
     @Test
     void testIntMax() {
         CodingBat code = new CodingBat();
-        assertEquals(3,code.intMax(1,2,3));
+        assertEquals(3, code.intMax(1, 2, 3));
     }
 }

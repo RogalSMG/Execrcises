@@ -2,8 +2,8 @@ package pl.danielrogoziński;
 
 public class Zadanka {
 
-    public static void Zadanka() {
-        int[] tab = {1,2,3,4,5,6};
+    public static void zadanka() {
+        int[] tab = {1, 2, 3, 4, 5, 6};
         int[] result = new int[7];
 
         for (int i = 0; i < tab.length; i++) {

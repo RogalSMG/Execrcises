@@ -16,36 +16,23 @@ public class MetodyWJava {
             highest = c;
         }
 
-        if (a*a + b*b == c*c) {
-            return true;
-        } else {
-            return false;
-        }
+        return a * a + b * b == c * c;
     }
 
     public double method7(double a) {
-        double sqrt = Math.sqrt(a);
-        return sqrt;
+        return Math.sqrt(a);
     }
 
     public int method6(int a) {
-        return a*a*a;
+        return a * a * a;
     }
 
     public boolean method5(int a) {
-        if (a % 3 == 0 && a % 5 ==0) {
-            return true;
-        } else {
-            return false;
-        }
+        return a % 3 == 0 && a % 5 == 0;
     }
 
     public boolean method4(int a) {
-        if (a % 2 == 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return a % 2 == 0;
     }
 
     public int yourAge() {
@@ -54,14 +41,13 @@ public class MetodyWJava {
 
     public String yourName() {
         System.out.println("What is your name? ");
-        String name = scan.nextLine();
-        return name;
+        return scan.nextLine();
     }
 
     public void method3(int a, int b) {
-        System.out.println("sum: " + (a+b));
-        System.out.println("Difference: " + (a-b));
-        System.out.println("Product : " + a*b);
+        System.out.println("sum: " + (a + b));
+        System.out.println("Difference: " + (a - b));
+        System.out.println("Product : " + a * b);
     }
 
 }
