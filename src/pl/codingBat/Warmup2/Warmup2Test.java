@@ -44,4 +44,17 @@ class Warmup2Test {
         Warmup2 warm = new Warmup2();
         assertEquals("Helllo", warm.nTwice("Hello", 3));
     }
+
+    @Test
+    void deFront() {
+        Warmup2 warm = new Warmup2();
+        assertAll("Testing string repeater",
+                () -> assertEquals("abx", warm.deFront("abx")),
+                () -> assertEquals("a", warm.deFront("axx")),
+                () -> assertEquals("bx", warm.deFront("xbx")),
+                () -> assertEquals("a", warm.deFront("a")),
+                () -> assertEquals("b", warm.deFront("xb")),
+                () -> assertEquals("a", warm.deFront("ax"))
+        );
+    }
 }
