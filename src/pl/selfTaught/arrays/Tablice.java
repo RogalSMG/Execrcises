@@ -1,4 +1,4 @@
-package pl.samouczekProgramistyPodstawowe.tablice;
+package pl.selfTaught.arrays;
 
 public class Tablice {
 

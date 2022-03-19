@@ -1,21 +1,22 @@
-package pl.samouczekProgramistyPodstawowe.interfejs;
+package pl.selfTaught.interfaces;
 
-public class Rectangle implements Figure {
+public class Triangle implements Figure {
     private final int side1;
     private final int side2;
 
-    public Rectangle(int side1, int side2) {
+    public Triangle(int side1, int side2) {
         this.side1 = side1;
         this.side2 = side2;
     }
 
+
     @Override
     public double getPerimeter() {
-        return side1 * 2 + side2 * 2;
+        return side1 + side2 + Math.sqrt(side1 * side1 + side2 * side2);
     }
 
     @Override
     public double getArea() {
-        return side1 * side2;
+        return side1 * side2 * 0.5;
     }
 }

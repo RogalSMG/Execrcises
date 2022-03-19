@@ -1,4 +1,4 @@
-package pl.javaStartZadania;
+package pl.javaStartExercises;
 
 public class basic {
 

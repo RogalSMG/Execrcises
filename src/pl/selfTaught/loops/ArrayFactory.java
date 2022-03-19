@@ -1,4 +1,4 @@
-package pl.samouczekProgramistyPodstawowe.pętle;
+package pl.selfTaught.loops;
 
 public class ArrayFactory {
     int size;

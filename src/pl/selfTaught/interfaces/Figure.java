@@ -1,4 +1,4 @@
-package pl.samouczekProgramistyPodstawowe.interfejs;
+package pl.selfTaught.interfaces;
 
 public interface Figure {
 

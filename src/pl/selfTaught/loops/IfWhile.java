@@ -1,4 +1,4 @@
-package pl.samouczekProgramistyPodstawowe.pętle;
+package pl.selfTaught.loops;
 
 import java.util.Arrays;
 

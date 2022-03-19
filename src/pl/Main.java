@@ -1,7 +1,7 @@
 package pl;
 
-import pl.samouczekProgramistyPodstawowe.interfejs.ProgramFigure;
-import pl.samouczekProgramistyPodstawowe.pętle.IfWhile;
+import pl.selfTaught.interfaces.ProgramFigure;
+import pl.selfTaught.loops.IfWhile;
 
 import java.util.ArrayList;
 

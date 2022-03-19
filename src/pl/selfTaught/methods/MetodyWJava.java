@@ -1,4 +1,4 @@
-package pl.samouczekProgramistyPodstawowe.metody;
+package pl.selfTaught.methods;
 
 import java.util.Scanner;
 

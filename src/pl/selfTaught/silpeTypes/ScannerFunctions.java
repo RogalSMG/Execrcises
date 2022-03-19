@@ -1,6 +1,6 @@
-package pl.samouczekProgramistyPodstawowe.SilpeTypes;
+package pl.selfTaught.silpeTypes;
 
-import pl.samouczekProgramistyPodstawowe.pętle.IfWhile;
+import pl.selfTaught.loops.IfWhile;
 
 import java.util.Arrays;
 import java.util.Scanner;

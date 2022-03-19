@@ -1,4 +1,4 @@
-package pl.samouczekProgramistyPodstawowe.interfejs;
+package pl.selfTaught.interfaces;
 
 public class Circle implements Figure {
     private final int radius;

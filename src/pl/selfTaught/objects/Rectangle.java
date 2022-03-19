@@ -1,4 +1,4 @@
-package pl.samouczekProgramistyPodstawowe.obiektyIPakiety;
+package pl.selfTaught.objects;
 
 public class Rectangle {
     int length;

@@ -1,4 +1,4 @@
-package pl.codingBat.Warmup2;
+package pl.codingBat.warmup2;
 
 import org.junit.jupiter.api.Test;
 
