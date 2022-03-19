@@ -38,7 +38,7 @@ public class Warmup2 {
     int countXX(String str) {
         int count = 0;
         for (int i = 0; i < str.length() - 1; i++) {
-            if (str.substring(i, i + 2).equals("xx")) {
+            if (str.startsWith("xx", i)) {
                 count++;
             }
         }
@@ -76,7 +76,7 @@ public class Warmup2 {
     }
 
     public int last2(String str) {
-        String lastTwo = null;
+        String lastTwo;
         if (str.length() < 3) {
             return 0;
         } else lastTwo = str.substring(str.length() - 2);
@@ -111,9 +111,7 @@ public class Warmup2 {
 
     public boolean array123(int[] nums) {
         for (int i = 0; i < nums.length - 2; i++) {
-            if (nums[i] == 1
-                    && nums[i + 1] == 2
-                    && nums[i + 2] == 3) {
+            if (nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3) {
                 return true;
             }
         }
@@ -149,27 +147,27 @@ public class Warmup2 {
         if (str.length() < 3) {
             return str;
         }
-        String out = "";
+        StringBuilder out = new StringBuilder();
         for (int i = 0; i < str.length(); i += 4) {
             int end = i + 2;
             if (end > str.length()) {
                 end = str.length();
             }
-            out = out + str.substring(i, end);
+            out.append(str, i, end);
         }
-        return out;
+        return out.toString();
     }
 
     public String stringYak(String str) {
-        String out = "";
+        StringBuilder out = new StringBuilder();
         for (int i = 0; i < str.length(); i++) {
             if (i < str.length() - 2 && (str.charAt(i) == 'y' && str.charAt(i + 2) == 'k')) {
                 i = i + 2;
             } else {
-                out += str.charAt(i);
+                out.append(str.charAt(i));
             }
         }
-        return out;
+        return out.toString();
     }
 
     public int array667(int[] nums) {
@@ -193,8 +191,7 @@ public class Warmup2 {
 
     public boolean has271(int[] nums) {
         for (int i = 0; i < nums.length - 2; i++) {
-            if (nums[i] + 5 == nums[i + 1]
-                    && Math.abs(nums[i + 2] - (nums[i] - 1)) <= 2) {
+            if (nums[i] + 5 == nums[i + 1] && Math.abs(nums[i + 2] - (nums[i] - 1)) <= 2) {
                 return true;
             }
         }
@@ -229,7 +226,7 @@ public class Warmup2 {
 
     public String left2(String str) {
         String first2 = str.substring(0, 2);
-        String rest = str.substring(2, str.length());
+        String rest = str.substring(2);
         return rest + first2;
     }
 
@@ -272,7 +269,7 @@ public class Warmup2 {
         if (str.length() < 3) {
             return false;
         }
-        String isBad = "";
+        String isBad;
         if (str.length() == 3) {
             isBad = str.substring(0, 3);
         } else {
@@ -344,4 +341,13 @@ public class Warmup2 {
         }
     }
 
+    public String extraFront(String str) {
+        String first2;
+        if (str.length() < 3) {
+            first2 = str;
+        } else {
+            first2 = str.substring(0, 2);
+        }
+        return first2 + first2 + first2;
+    }
 }
