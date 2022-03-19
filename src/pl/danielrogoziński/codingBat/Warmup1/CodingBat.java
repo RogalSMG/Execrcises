@@ -44,7 +44,7 @@ public class CodingBat {
 
         if (str.contains(del) && fromIndex == 1) {
             String before = str.substring(0, fromIndex);
-            String after = str.substring(fromIndex + 3, str.length());
+            String after = str.substring(fromIndex + 3);
             return before + after;
         }
         return str;
@@ -97,7 +97,7 @@ public class CodingBat {
 
     public String missingChar(String str, int n) {
         String before = str.substring(0, n);
-        String after = str.substring(n + 1, str.length());
+        String after = str.substring(n + 1);
         return before + after;
     }
 

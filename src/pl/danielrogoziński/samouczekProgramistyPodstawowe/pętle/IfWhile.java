@@ -48,19 +48,19 @@ public class IfWhile {
     }
 
     public static int makeBinnaryFromInt(int input) {
-        String binnaryInString = "";
+        StringBuilder binnaryInString = new StringBuilder();
         while (input > 0) {
-            binnaryInString += input % 2;
+            binnaryInString.append(input % 2);
             input /= 2;
         }
-        return Integer.parseInt(reversString(binnaryInString));
+        return Integer.parseInt(reversString(binnaryInString.toString()));
     }
 
     public static void displayingArrayInSpecialWay(int[] arrayInput) {
         for (int i = 0; i < arrayInput.length; i++) {
             if (i == 0) {
                 System.out.print("[" + arrayInput[i] + ", ");
-            } else if (i > 0 && i < arrayInput.length - 1) {
+            } else if (i < arrayInput.length - 1) {
                 System.out.print(arrayInput[i] + ", ");
             } else {
                 System.out.println(arrayInput[i] + "]");
@@ -129,11 +129,11 @@ public class IfWhile {
             System.out.println();
         }
 
-        if ( trunkWidth < (high * 2 - 1) && trunkWidth % 2 == 1) {
+        if (trunkWidth < (high * 2 - 1) && trunkWidth % 2 == 1) {
             for (int i = 0; i < trunkHeight; i++) {
                 printOneSpace(high - 1 - (trunkWidth - 1) / 2);
                 printOneStar(trunkWidth);
-                System.out.println("");
+                System.out.println();
             }
 
         } else {

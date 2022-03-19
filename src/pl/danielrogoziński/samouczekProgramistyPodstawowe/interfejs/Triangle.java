@@ -1,8 +1,8 @@
 package pl.danielrogoziński.samouczekProgramistyPodstawowe.interfejs;
 
-public class Triangle implements Figure{
-    private int side1;
-    private int side2;
+public class Triangle implements Figure {
+    private final int side1;
+    private final int side2;
 
     public Triangle(int side1, int side2) {
         this.side1 = side1;

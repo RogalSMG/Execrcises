@@ -53,7 +53,7 @@ public class ProgramFigure {
             System.out.println("Area: " + kupoa.getArea());
             System.out.println("Perimeter: " + kupoa.getPerimeter());
 
-            System.out.println("");
+            System.out.println();
         }
     }
 }

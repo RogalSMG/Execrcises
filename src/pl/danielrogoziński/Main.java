@@ -1,6 +1,5 @@
 package pl.danielrogoziński;
 
-import pl.danielrogoziński.javaStartZadania.basic;
 import pl.danielrogoziński.samouczekProgramistyPodstawowe.interfejs.ProgramFigure;
 import pl.danielrogoziński.samouczekProgramistyPodstawowe.pętle.IfWhile;
 

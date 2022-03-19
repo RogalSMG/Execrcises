@@ -1,8 +1,8 @@
 package pl.danielrogoziński.samouczekProgramistyPodstawowe.interfejs;
 
 public class Rectangle implements Figure {
-    private int side1;
-    private int side2;
+    private final int side1;
+    private final int side2;
 
     public Rectangle(int side1, int side2) {
         this.side1 = side1;

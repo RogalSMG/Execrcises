@@ -32,7 +32,7 @@ public class ScannerFunctions {
         for (int arra : array) {
             System.out.print(arra + " ");
         }
-        System.out.println("");
+        System.out.println();
         IfWhile.bubbleSorting(array);
 
         for (int arra : array) {
