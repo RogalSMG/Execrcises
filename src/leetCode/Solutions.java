@@ -96,4 +96,7 @@ public class Solutions {
         return sum;
     }
 
+    public boolean isPalindrome(ListNode head) {
+        return true;
+    }
 }
