@@ -22,7 +22,7 @@ public class ArrayFactory {
                 if (i == j) {
                     matrix[i][j]++;
                 } else {
-                    // that line is superfluous, arrays are initialized with default value, 0 in case of int type
+                    // that line is superfluous, arrays are initialized with default value 0 in case of int type
                     matrix[i][j] = 0;
                 }
                 if (i + j == size - 1) {
