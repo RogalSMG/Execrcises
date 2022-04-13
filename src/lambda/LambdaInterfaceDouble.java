@@ -1,5 +1,5 @@
 package lambda;
 
- interface LambdaInterfaceDouble {
+public interface LambdaInterfaceDouble {
     double doubleMethod();
 }
