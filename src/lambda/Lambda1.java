@@ -12,7 +12,7 @@ public class Lambda1 {
         // print doing
         inter.doSth();
 
-        // getting name of anonymous class
+        // getting name of anonymous class -
         String anonymousClass = inter.getClass().getName();
         System.out.println(anonymousClass);
 
