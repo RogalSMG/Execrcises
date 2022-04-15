@@ -16,17 +16,16 @@ public class Lambda1 {
         String anonymousClass = inter.getClass().getName();
         System.out.println(anonymousClass);
 
-        // make obj of LambdaTry class, constructor include lambda exp so field inter have assigned value when obj is created
+        // make obj of LambdaTry class, constructor include lambda exp so field inter has assigned expression when obj is created
         LambdaTry lambdaTry = new LambdaTry();
         lambdaTry.inter.doSth();
         // change value of inter field by using lambda
         lambdaTry.inter = () -> System.out.println("Using this");
         lambdaTry.inter.doSth();
 
-        ClassWithTwoInterfaces lambdaTry1 = new ClassWithTwoInterfaces();
     }
 
-    static class LambdaTry {
+     static class LambdaTry {
         // interface variable
         firstLambda inter;
 

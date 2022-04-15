@@ -15,7 +15,8 @@ public class Lambda2 {
         lambdaTrySepClass.firstLambdaInterface.returnVoidInterfaceMethod();
 
         // assign nothing to lambda
-        lambdaTrySepClass.firstLambdaInterface = () -> {};
+        lambdaTrySepClass.firstLambdaInterface = () -> {
+        };
         lambdaTrySepClass.firstLambdaInterface.returnVoidInterfaceMethod();
 
         System.out.println("-----");
