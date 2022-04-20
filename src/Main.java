@@ -12,6 +12,7 @@ public class Main {
         IfWhile.treeWithTrunk(4, 3, 3);
 
 
+
 //        Tablice.displayArray(array);
 //        IfWhile.insertionSorting(array);
 //        Tablice.displayArray(array);
