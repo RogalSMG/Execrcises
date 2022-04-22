@@ -84,6 +84,24 @@ public class Solutions {
     }
 
     public static String explode(String digits) {
-        return digits;
+        StringBuilder build = new StringBuilder();
+
+        for (int i = 0; i < digits.length(); i++) {
+            int numb = Integer.parseInt(String.valueOf(digits.charAt(i)));
+            build.append(String.valueOf(digits.charAt(i)).repeat(numb));
+        }
+        return build.toString();
+    }
+
+    public static boolean isFirst(int num) {
+        if (num < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 }

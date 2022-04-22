@@ -1,5 +1,6 @@
 package codingBat.warmup2;
 
+import codingBat.warmup2.Warmup2;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -37,24 +38,5 @@ class Warmup2Test {
     void stringSplosion() {
         Warmup2 warm = new Warmup2();
         assertEquals("AAbAbc", warm.stringSplosion("Abc"));
-    }
-
-    @Test
-    void testNTwice() {
-        Warmup2 warm = new Warmup2();
-        assertEquals("Helllo", warm.nTwice("Hello", 3));
-    }
-
-    @Test
-    void deFront() {
-        Warmup2 warm = new Warmup2();
-        assertAll("Testing string repeater",
-                () -> assertEquals("abx", warm.deFront("abx")),
-                () -> assertEquals("a", warm.deFront("axx")),
-                () -> assertEquals("bx", warm.deFront("xbx")),
-                () -> assertEquals("a", warm.deFront("a")),
-                () -> assertEquals("b", warm.deFront("xb")),
-                () -> assertEquals("a", warm.deFront("ax"))
-        );
     }
 }

@@ -1,5 +1,6 @@
 package codingBat.warmup1;
 
+import codingBat.warmup1.CodingBat;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -24,7 +25,7 @@ class CodingBatTest {
     @Test
     void testMax1020() {
         CodingBat code = new CodingBat();
-        assertEquals(0, code.max1020(20, 21));
+        assertEquals(20, code.max1020(20, 21));
     }
 
     @Test

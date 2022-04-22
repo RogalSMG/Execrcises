@@ -9,7 +9,7 @@ public class Main {
         ArrayList<Integer> list = new ArrayList<>();
         ProgramFigure programFigure = new ProgramFigure();
 
-        IfWhile.treeWithTrunk(4, 3, 3);
+        IfWhile.treeWithTrunk(10, 3, 3);
 
 
 
