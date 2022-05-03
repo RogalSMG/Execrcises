@@ -51,9 +51,9 @@ public class Solutions {
             StringBuilder s = new StringBuilder();
             for (int i = 0; i < str.length(); i++) {
                 if (str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i' &&
-                    str.charAt(i) != 'u' && str.charAt(i) != 'o' && str.charAt(i) != 'A' &&
-                    str.charAt(i) != 'E' && str.charAt(i) != 'I' && str.charAt(i) != 'O' &&
-                    str.charAt(i) != 'U') {
+                        str.charAt(i) != 'u' && str.charAt(i) != 'o' && str.charAt(i) != 'A' &&
+                        str.charAt(i) != 'E' && str.charAt(i) != 'I' && str.charAt(i) != 'O' &&
+                        str.charAt(i) != 'U') {
                     s.append(str.charAt(i));
                 }
             }
@@ -93,6 +93,12 @@ public class Solutions {
         return build.toString();
     }
 
+    /**
+     * Method check if given number is prime
+     *
+     * @param num given number
+     * @return true if number is prime, false if not
+     */
     public static boolean isFirst(int num) {
         if (num < 2) {
             return false;
@@ -103,5 +109,15 @@ public class Solutions {
             }
         }
         return true;
+    }
+
+    public static int[] getSum(int[][] votes) {
+        int[] results = new int[2];
+        for (int[] vote : votes) {
+            for (int j = 0; j < 2; j++) {
+                results[j] += vote[j];
+            }
+        }
+        return results;
     }
 }
