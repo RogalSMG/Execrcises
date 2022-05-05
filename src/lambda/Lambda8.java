@@ -9,8 +9,10 @@ public class Lambda8 {
         double out = func.apply(9);
         System.out.println(out);
 
-        BinaryOperator<Double> operant = (integer, integer2) -> Math.sqrt(integer * integer + integer2 * integer2);
-        double sqrt = operant.apply(12.0,9.0);
+        BinaryOperator<Double> operand = (integer, integer2) -> Math.sqrt(integer * integer + integer2 * integer2);
+        double sqrt = operand.apply(12.0,9.0);
         System.out.println(sqrt);
+
+
     }
 }
