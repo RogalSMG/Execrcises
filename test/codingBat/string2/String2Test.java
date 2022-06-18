@@ -9,9 +9,16 @@ class String2Test {
 
     @Test
     void testCatDog() {
-
         assertAll(
-                () -> assertTrue(string2.catDog("dogdogcat"))
+                () -> assertFalse(string2.catDog("dogdogcat"))
+        );
+    }
+
+    @Test
+    void testXyzThere() {
+        assertAll(
+                () -> assertFalse(string2.xyzThere("1.xyz.xyz2.xyz")),
+                () -> assertTrue(string2.xyzThere("abc.xyzxyz"))
         );
     }
 }

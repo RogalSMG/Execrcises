@@ -85,18 +85,32 @@ public class String2 {
      * Return true if the given string contains an appearance of "xyz" where the xyz is not directly preceded by a period (.). So "xxyz" counts but "x.xyz" does not.
      */
     public boolean xyzThere(String str) {
-        for (int i = 0; i < str.length() - 2; i++) {
-            int index = str.indexOf("xyz");
-            if (index == -1) {
+        for (int i = str.indexOf("xyz"); i < str.length() - 2; ) {
+            if (i == -1) {
                 return false;
             }
 
-            if (index == 0 || str.charAt(index - 1) != '.') {
+            if (i == 0 || str.charAt(i - 1) != '.') {
                 return true;
             }
 
-            str = str.substring(index);
+            str = str.substring(i + 3);
+            i = str.indexOf("xyz");
         }
         return false;
+    }
+
+    /**
+     * Given a string and an int n, return a string made of n repetitions of the last n characters of the string.
+     * You may assume that n is between 0 and the length of the string, inclusive.
+     */
+    public String repeatEnd(String str, int n) {
+        str = str.substring(str.length() - n);
+        StringBuilder builder = new StringBuilder("");
+        for (int i = 0; i < n; i++) {
+            builder.append(str);
+        }
+        return builder.toString();
+        // return "" + str.repeat(Math.max(0, n)); equivalent
     }
 }

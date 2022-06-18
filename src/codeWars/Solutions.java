@@ -120,4 +120,10 @@ public class Solutions {
         }
         return results;
     }
+
+    public static int[] arrayDiff(int[] a, int[] b) {
+
+        return a;
+    }
+
 }

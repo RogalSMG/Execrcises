@@ -40,4 +40,14 @@ class SolutionsTest {
                 () -> assertEquals("", Solutions.explode("0"))
         );
     }
+
+    @Test
+    void arrayDiff() {
+        assertArrayEquals(new int[]{2}, Solutions.arrayDiff(new int[]{1, 2}, new int[]{1}));
+        assertArrayEquals(new int[]{2, 2}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{1}));
+        assertArrayEquals(new int[]{1}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{2}));
+        assertArrayEquals(new int[]{1, 2, 2}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{}));
+        assertArrayEquals(new int[]{}, Solutions.arrayDiff(new int[]{}, new int[]{1, 2}));
+
+    }
 }
