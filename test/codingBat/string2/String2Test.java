@@ -21,4 +21,12 @@ class String2Test {
                 () -> assertTrue(string2.xyzThere("abc.xyzxyz"))
         );
     }
+
+    @Test
+    void testCountHi() {
+        assertAll(
+                () -> assertEquals(2,string2.countHi("hihi")),
+                () -> assertEquals(2,string2.countHi("hihii"))
+        );
+    }
 }

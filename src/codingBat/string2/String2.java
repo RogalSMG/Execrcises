@@ -113,4 +113,22 @@ public class String2 {
         return builder.toString();
         // return "" + str.repeat(Math.max(0, n)); equivalent
     }
+
+    /**
+     * Return the number of times that the string "hi" appears anywhere in the given string.
+     */
+    public int countHi(String str) {
+        int count = 0;
+        while (true) {
+            int index = str.indexOf("hi");
+            if (index >= 0) {
+                count++;
+                str = str.substring(index + 2);
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
+
 }
