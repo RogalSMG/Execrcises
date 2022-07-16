@@ -233,7 +233,7 @@ public class String1 {
             str = str.substring(1);
         }
         if (str.length() > 0 && str.charAt(str.length() - 1) == 'x') {
-            str = str.substring(0,str.length() - 1);
+            str = str.substring(0, str.length() - 1);
         }
         return str;
     }
@@ -247,7 +247,7 @@ public class String1 {
         if (str.length() > 0) {
             if (wasFirstX && str.charAt(0) == 'x') {
                 str = str.substring(1);
-            } else if (!wasFirstX && str.charAt(1) == 'x'){
+            } else if (!wasFirstX && str.charAt(1) == 'x') {
                 str = str.charAt(0) + str.substring(2);
             }
         }
@@ -266,11 +266,18 @@ public class String1 {
     }
 
     /**
-     *
-     *Given 2 strings, a and b, return a new string made of the first char of a and the last char of b, so "yo" and "java" yields "ya".
+     * Given 2 strings, a and b, return a new string made of the first char of a and the last char of b, so "yo" and "java" yields "ya".
      * If either string is length 0, use '@' for its missing char
      */
     public String lastChars(String a, String b) {
-        return "";
+        char first;
+        if (a.isEmpty()) {
+            first = '@';
+        } else {
+            first = a.charAt(0);
+        }
+        char last;
+        last = b.isEmpty() ? '@' : b.charAt(b.length() - 1);
+        return String.valueOf(first) + last;
     }
 }

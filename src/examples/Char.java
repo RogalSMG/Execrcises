@@ -11,7 +11,7 @@ public class Char {
 
         System.out.println((char) ('d' - 1)); //c
         System.out.println((char) 'd' - 1); //99
-        System.out.println((char) (198 - 'd')); //bracket must be to proper convert whole expression to char //b
+        System.out.println((char) (198 - 'd')); //bracket must be present to proper convert whole expression to char //b
         System.out.println((char) 198 - 'd'); //without brackets: //98
         System.out.println((char) 98); //b
 

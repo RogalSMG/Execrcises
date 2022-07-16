@@ -25,8 +25,8 @@ class String2Test {
     @Test
     void testCountHi() {
         assertAll(
-                () -> assertEquals(2,string2.countHi("hihi")),
-                () -> assertEquals(2,string2.countHi("hihii"))
+                () -> assertEquals(2, string2.countHi("hihi")),
+                () -> assertEquals(2, string2.countHi("hihii"))
         );
     }
 }
