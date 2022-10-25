@@ -31,5 +31,26 @@ class String2Test {
     }
 
     @Test
-    void
+    void testCounCode() {
+        assertAll("Testing",
+                () -> assertEquals(1,string2.countCode("code")),
+                () -> assertEquals(2,string2.countCode("coxecode")),
+                () -> assertEquals(2,string2.countCode("codecope")),
+                () -> assertEquals(0,string2.countCode("cod")),
+                () -> assertEquals(0,string2.countCode("")),
+                () -> assertEquals(1,string2.countCode("codeco")),
+                () -> assertEquals(1,string2.countCode("xxcozeyycop")),
+                () -> assertEquals(3,string2.countCode("AAcodeBBcoleCCccoreDD")),
+                () -> assertEquals(2,string2.countCode("cozexxcope")),
+                () -> assertEquals(1,string2.countCode("cozfxxcope")),
+                () -> assertEquals(3,string2.countCode("coAcodeBcoleccoreDD"))
+        );
+    }
+
+    @Test
+    void testEndOther() {
+        assertAll(
+                () -> assertFalse(string2.endOther("", ""))
+        );
+    }
 }

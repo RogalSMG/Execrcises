@@ -106,11 +106,17 @@ public class String2 {
      */
     public String repeatEnd(String str, int n) {
         str = str.substring(str.length() - n);
-        StringBuilder builder = new StringBuilder("");
+        StringBuilder builder = new StringBuilder();
+        builder.append(str.repeat(Math.max(0, n)));
+
+        /*
         for (int i = 0; i < n; i++) {
             builder.append(str);
-        }
+        } replaced by builder
+         */
+
         return builder.toString();
+
         // return "" + str.repeat(Math.max(0, n)); equivalent
     }
 
@@ -134,25 +140,52 @@ public class String2 {
     /**
      * Return the number of times that the string "code" appears anywhere in the given string,
      * except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+     *
      * @param str given string
      * @return number of repetitions "cope" string in given string and there is also allowed any other letter instead of 'p'
      */
     public int countCode(String str) {
-        if (str.isBlank() || str.length() < 3) {
+        if (str.length() < 4) {
             return 0;
         }
         int count = 0;
         int start = 0;
 
-        while (true) {
+        do {
             int found = str.indexOf("co", start);
-            if (str.charAt(found + 3) == 'e') {
+            if (str.length() > found + 3 && str.charAt(found + 3) == 'e') {
                 count++;
-                start += 3;
+                start = found + 4;
             } else {
-                break;
+                start += 2;
             }
-        }
+        } while (str.length() > start);
+
         return count;
     }
+
+    /**
+     * Given two strings, return true if either of the strings appears at the very end of the other string, ignoring upper/lower case differences
+     * (in other words, the computation should not be "case sensitive"). Note: str.toLowerCase() returns the lowercase version of a string.
+     *
+     * @param a first string
+     * @param b second string
+     * @return true if one of both string contain another at very end position
+     */
+    public boolean endOther(String a, String b) {
+        if (a.isEmpty() || b.isEmpty()) {
+            return false;
+        }
+
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+
+        if (b.length() > a.length()) {
+            String temp = a;
+            a = b;
+            b = temp;
+        }
+        return a.indexOf(b) == a.length() - b.length(); //part of the tests on the site are not passed, idk why???
+    }
+
 }
