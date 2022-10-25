@@ -280,4 +280,21 @@ public class String1 {
         last = b.isEmpty() ? '@' : b.charAt(b.length() - 1);
         return String.valueOf(first) + last;
     }
+
+    /**
+     * Given a string of even length, return a string made of the middle two chars,
+     * so the string "string" yields "ri". The string length will be at least 2.
+     */
+    public String middleTwo(String str) {
+        if (str.isBlank()) {
+            return "";
+        }
+
+        int middle = str.length() / 2;
+        if (str.length() % 2 == 0) {
+            return str.substring(middle - 1, middle + 1);
+        } else {
+            return str.substring(middle , middle + 1);
+        }
+    }
 }

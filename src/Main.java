@@ -9,7 +9,6 @@ public class Main {
 
         int[] sum = Solutions.getSum(new int[][]{{12, 44}, {10, 11}, {93, 129}, {4, 6}, {40, 39}, {1, 0}});
 
-
 //        Tablice.displayArray(array);
 //        IfWhile.insertionSorting(array);
 //        Tablice.displayArray(array);

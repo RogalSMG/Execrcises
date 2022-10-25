@@ -18,9 +18,10 @@ public class Char {
         System.out.println("--------");
 
         char d = 'd';
-        System.out.println((int)d); // 100
-        System.out.println(d+d); //200
+        System.out.println((int) d); // 100
+        System.out.println(d + d); //200
         System.out.println('d' + 'd'); //200
+        System.out.println((char) ('d') + (char) ('d')); //200
         System.out.println();
     }
 

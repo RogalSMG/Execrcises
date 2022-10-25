@@ -131,4 +131,28 @@ public class String2 {
         return count;
     }
 
+    /**
+     * Return the number of times that the string "code" appears anywhere in the given string,
+     * except we'll accept any letter for the 'd', so "cope" and "cooe" count.
+     * @param str given string
+     * @return number of repetitions "cope" string in given string and there is also allowed any other letter instead of 'p'
+     */
+    public int countCode(String str) {
+        if (str.isBlank() || str.length() < 3) {
+            return 0;
+        }
+        int count = 0;
+        int start = 0;
+
+        while (true) {
+            int found = str.indexOf("co", start);
+            if (str.charAt(found + 3) == 'e') {
+                count++;
+                start += 3;
+            } else {
+                break;
+            }
+        }
+        return count;
+    }
 }

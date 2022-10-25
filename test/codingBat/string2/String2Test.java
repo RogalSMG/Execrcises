@@ -29,4 +29,7 @@ class String2Test {
                 () -> assertEquals(2, string2.countHi("hihii"))
         );
     }
+
+    @Test
+    void
 }

@@ -23,4 +23,15 @@ class String1Test {
         );
 
     }
+
+    @Test
+    void middleTwo() {
+        assertAll(
+                () -> assertEquals("s", string1.middleTwo("ast")),
+                () -> assertEquals("ss", string1.middleTwo("asst")),
+                () -> assertEquals("at", string1.middleTwo("at")),
+                () -> assertEquals("a", string1.middleTwo("a")),
+                () -> assertEquals("", string1.middleTwo(""))
+        );
+    }
 }
