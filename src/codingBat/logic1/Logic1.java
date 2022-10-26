@@ -6,7 +6,6 @@ public class Logic1 {
      * A squirrel party is successful when the number of cigars is between 40 and 60, inclusive.
      * Unless it is the weekend, in which case there is no upper bound on the number of cigars.
      * Return true if the party with the given values is successful, or false otherwise.
-     *
      */
     public boolean cigarParty(int cigars, boolean isWeekend) {
         if (cigars >= 40 && isWeekend) {
@@ -21,7 +20,6 @@ public class Logic1 {
      * If either of you is very stylish, 8 or more, then the result is 2 (yes).
      * With the exception that if either of you has style of 2 or less, then the result is 0 (no).
      * Otherwise, the result is 1 (maybe).
-     *
      */
     public int dateFashion(int you, int date) {
         if (you <= 2 || date <= 2) {
@@ -36,7 +34,6 @@ public class Logic1 {
      * In particular, they play if the temperature is between 60 and 90 (inclusive).
      * Unless it is summer, then the upper limit is 100 instead of 90.
      * Given an int temperature and a boolean isSummer, return true if the squirrels play and false otherwise.
-     *
      */
     public boolean squirrelPlay(int temp, boolean isSummer) {
         if (isSummer) {
@@ -44,14 +41,4 @@ public class Logic1 {
         } else return (temp >= 60 && temp <= 90);
     }
 
-    /**
-     * We want to make a row of bricks that is goal inches long. We have a number of small bricks (1 inch each) and big bricks (5 inches each).
-     * Return true if it is possible to make the goal by choosing from the given bricks.
-     * This is a little harder than it looks and can be done without any loops. See also: Introduction to MakeBricks
-     */
-    public boolean makeBricks(int small, int big, int goal) {
-        int bigRest = goal / 5;
-        int smallRest = goal - (bigRest * 5);
-        return (big >= bigRest && small >= smallRest);
-    }
 }
