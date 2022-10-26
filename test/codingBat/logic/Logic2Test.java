@@ -1,4 +1,4 @@
-package codingBat.logic1;
+package codingBat.logic;
 
 import org.junit.jupiter.api.Test;
 

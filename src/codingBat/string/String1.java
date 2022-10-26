@@ -1,4 +1,4 @@
-package codingBat.string1;
+package codingBat.string;
 
 public class String1 {
     public String makeTags(String tag, String word) {

@@ -1,4 +1,4 @@
-package codingBat.string1;
+package codingBat.string;
 
 import org.junit.jupiter.api.Test;
 

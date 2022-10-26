@@ -1,4 +1,4 @@
-package codingBat.string2;
+package codingBat.string;
 
 public class String2 {
     public String doubleChar(String str) {

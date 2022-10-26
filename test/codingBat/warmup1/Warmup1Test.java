@@ -1,16 +1,15 @@
 package codingBat.warmup1;
 
-import codingBat.warmup1.CodingBat;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-class CodingBatTest {
+class Warmup1Test {
     @Test
     void testNotString() {
-        CodingBat code = new CodingBat();
+        Warmup1 code = new Warmup1();
         assertAll("Testes",
                 () -> assertEquals("not", code.notString("not"))
         );
@@ -18,19 +17,19 @@ class CodingBatTest {
 
     @Test
     void frontBack() {
-        CodingBat code = new CodingBat();
+        Warmup1 code = new Warmup1();
         assertEquals("abc", code.frontBack("cba"));
     }
 
     @Test
     void testMax1020() {
-        CodingBat code = new CodingBat();
+        Warmup1 code = new Warmup1();
         assertEquals(20, code.max1020(20, 21));
     }
 
     @Test
     void testIntMax() {
-        CodingBat code = new CodingBat();
+        Warmup1 code = new Warmup1();
         assertEquals(3, code.intMax(1, 2, 3));
     }
 }

@@ -1,6 +1,5 @@
-package codingBat.warmup2;
+package codingBat.warmup1;
 
-import codingBat.warmup2.Warmup2;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertAll;

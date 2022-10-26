@@ -1,4 +1,4 @@
-package codingBat.warmup2;
+package codingBat.warmup1;
 
 public class Warmup2 {
     /*

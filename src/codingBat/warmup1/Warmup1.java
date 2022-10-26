@@ -1,6 +1,6 @@
 package codingBat.warmup1;
 
-public class CodingBat {
+public class Warmup1 {
     /**
      * Return tru if one of the params is equal 10 or their sum
      *
