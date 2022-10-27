@@ -1,4 +1,4 @@
-package selfTaught.arrays;
+package examples.arrays;
 
 public class Tablice {
 

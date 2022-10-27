@@ -20,4 +20,19 @@ class Logic2Test {
                 () -> assertFalse(logic2.makeBricks(0,0,1))
         );
     }
+
+    @Test
+    void closeFar() {
+        assertTrue(logic2.closeFar(4,5,8));
+    }
+
+    @Test
+    void blackjack() {
+        assertAll(
+                () -> assertEquals(20,logic2.blackjack(20,22)),
+                () -> assertEquals(21,logic2.blackjack(21,22)),
+                () -> assertEquals(0,logic2.blackjack(23,22)),
+                () -> assertEquals(20,logic2.blackjack(20,19))
+        );
+    }
 }

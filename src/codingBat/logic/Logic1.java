@@ -176,7 +176,145 @@ public class Logic1 {
      * However, with the exception that if "bOk" is true, b does not need to be greater than a.
      */
     public boolean inOrder(int a, int b, int c, boolean bOk) {
-
+        if (b > a && c > b) {
+            return true;
+        } else return c > b && bOk;
     }
+
+    /**
+     * Given three ints, a b c, return true if they are in strict increasing order, such as 2 5 11, or 5 6 7, but not 6 5 7 or 5 5 7.
+     * However, with the exception that if "equalOk" is true, equality is allowed, such as 5 5 7 or 5 5 5.
+     */
+    public boolean inOrderEqual(int a, int b, int c, boolean equalOk) {
+        if (b > a && c > b) {
+            return true;
+        } else return b >= a && c >= b && equalOk;
+    }
+
+    /**
+     * Given three ints, a b c, return true if two or more of them have the same rightmost digit.
+     * The ints are non-negative.
+     */
+    public boolean lastDigit(int a, int b, int c) {
+        a = a % 10;
+        b = b % 10;
+        c = c % 10;
+        return a == b || a == c || b == c;
+    }
+
+    /**
+     * Given three ints, a b c, return true if one of them is 10 or more less than one of the others.
+     */
+    public boolean lessBy10(int a, int b, int c) {
+
+        return (Math.abs(a - b) >= 10 || Math.abs(a - c) >= 10 || Math.abs(c - b) >= 10);
+    }
+
+    /**
+     * Return the sum of two 6-sided dice rolls, each in the range 1..6.
+     * However, if noDoubles is true, if the two dice show the same value,
+     * increment one die to the next value, wrapping around to 1 if its value was 6.
+     */
+    public int withoutDoubles(int die1, int die2, boolean noDoubles) {
+        int sum = die1 + die2;
+        if (noDoubles && die1 == die2) {
+            if (sum == 12) {
+                return 7;
+            } else return sum + 1;
+        } else return sum;
+    }
+
+    /**
+     * Given two int values, return whichever value is larger.
+     * However, if the two values have the same remainder when divided by 5, then the return the smaller value.
+     * However, in all cases, if the two values are the same, return 0.
+     */
+    public int maxMod5(int a, int b) {
+        int restA = a % 5;
+        int restB = b % 5;
+        int higher = a;
+        int lower = b;
+        if (b > a) {
+            higher = b;
+            lower = a;
+        }
+        if (a == b) {
+            return 0;
+        } else if (restA == restB) {
+            return lower;
+        } else return higher;
+    }
+
+    /**
+     * You have a red lottery ticket showing ints a, b, and c, each of which is 0, 1, or 2.
+     * If they are all the value 2, the result is 10. Otherwise if they are all the same, the result is 5.
+     * Otherwise so long as both b and c are different from a, the result is 1. Otherwise the result is 0.
+     */
+    public int redTicket(int a, int b, int c) {
+        if (a == 2 && b == 2 && c == 2) {
+            return 10;
+        } else if (a == b && b == c) {
+            return 5;
+        } else if (a != b && a != c) {
+            return 1;
+        } else return 0;
+    }
+
+    /**
+     * You have a green lottery ticket, with ints a, b, and c on it.
+     * If the numbers are all different from each other, the result is 0.
+     * If all of the numbers are the same, the result is 20.
+     * If two of the numbers are the same, the result is 10.
+     */
+    public int greenTicket(int a, int b, int c) {
+        if (a == b && b == c) {
+            return 20;
+        } else if (a == b || a == c || b == c) {
+            return 10;
+        } else return 0;
+    }
+
+    /**
+     * You have a blue lottery ticket, with ints a, b, and c on it.
+     * This makes three pairs, which we'll call ab, bc, and ac.
+     * Consider the sum of the numbers in each pair.
+     * If any pair sums to exactly 10, the result is 10.
+     * Otherwise if the ab sum is exactly 10 more than either bc or ac sums, the result is 5.
+     * Otherwise the result is 0.
+     */
+    public int blueTicket(int a, int b, int c) {
+        int sumAB = a + b;
+        int sumAC = a + c;
+        int sumBC = c + b;
+        if (sumAB == 10 || sumBC == 10 || sumAC == 10) {
+            return 10;
+        } else if (sumAB == sumBC + 10 || sumAB == sumAC + 10) {
+            return 5;
+        } else return 0;
+    }
+
+    /**
+     * Given two ints, each in the range 10..99, return true if there is a digit that appears in both numbers, such as the 2 in 12 and 23.
+     */
+    public boolean shareDigit(int a, int b) {
+        int leftA = a / 10;
+        int leftB = b / 10;
+        int rightA = a % 10;
+        int rightB = b % 10;
+        return leftA == leftB || leftA == rightB || rightA == leftB || rightA == rightB;
+    }
+
+    /**
+     * Given 2 non-negative ints, a and b, return their sum, so long as the sum has the same number of digits as a.
+     * If the sum has more digits than a, just return a without b.
+     */
+    public int sumLimit(int a, int b) {
+        int sum = a + b;
+        boolean isSumLonger = String.valueOf(sum).length() > String.valueOf(a).length();
+        if (isSumLonger) {
+            return a;
+        } else return sum;
+    }
+
 
 }
