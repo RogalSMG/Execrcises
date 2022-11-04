@@ -123,4 +123,69 @@ public class Array1 {
         }
         return out;
     }
+
+    /**
+     * Given an array of ints of odd length, look at the first, last, and middle values in the array and return the largest. The array length will be at least 1.
+     */
+    public int maxTriple(int[] nums) {
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        int a = nums[0];
+        int b = nums[nums.length / 2];
+        int c = nums[nums.length - 1];
+
+        int largest = a;
+        if (largest < b) {
+            largest = b;
+        }
+        if (largest < c) {
+            largest = c;
+        }
+        return largest;
+    }
+
+    /**
+     * Given an int array of any length, return a new array of its first 2 elements. If the array is smaller than length 2, use whatever elements are present.
+     */
+    public int[] frontPiece(int[] nums) {
+        if (nums.length <= 2) {
+            return nums;
+        }
+        int[] ints = new int[2];
+        ints[0] = nums[0];
+        ints[1] = nums[1];
+        return ints;
+    }
+
+    /**
+     * Given 2 int arrays, a and b, return a new array length 2 containing, as much as will fit, the elements from a followed by the elements from b.
+     * The arrays may be any length, including 0, but there will be 2 or more elements available between the 2 arrays.
+     */
+    public int[] make2(int[] a, int[] b) {
+        if (a.length == 2) {
+            return a;
+        } else if (a.length > 2) {
+            return new int[]{a[0], a[1]};
+        }
+        if (a.length == 0) {
+            return new int[]{b[0], b[1]};
+        }
+        return new int[]{a[0], b[0]};
+    }
+
+    /**
+     * Given 2 int arrays, a and b, of any length, return a new array with the first element of each array. If either array is length 0, ignore that array.
+     */
+    public int[] front11(int[] a, int[] b) {
+        int lenghtA = a.length;
+        int lenghtB = b.length;
+        if (lenghtA == 0 && lenghtB == 0) {
+            return new int[]{};
+        } else if (lenghtA > 0 && lenghtB == 0) {
+            return new int[]{a[0]};
+        } else if (lenghtA == 0 && lenghtB > 0) {
+            return new int[]{b[0]};
+        } else return new int[]{a[0], b[0]};
+    }
 }

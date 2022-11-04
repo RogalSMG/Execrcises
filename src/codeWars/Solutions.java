@@ -1,42 +1,8 @@
 package codeWars;
 
+import java.util.ArrayList;
+
 public class Solutions {
-    public String toJadeCase(String phrase) {
-        // using phrase == 0 used less memory
-        if (phrase == null || phrase.isEmpty()) {
-            return null;
-        }
-        // could split to char[] and then make uppercase each char preceded by space
-        String[] words = phrase.split(" ");
-        StringBuilder output = new StringBuilder();
-
-        for (int i = 0; i < words.length; i++) {
-            String first = String.valueOf(words[i].charAt(0));
-            first = first.toUpperCase();
-            words[i] = first + words[i].substring(1);
-            if (i == words.length - 1) {
-                output.append(words[i]);
-            } else {
-                output.append(words[i]).append(" ");
-            }
-        }
-        return new String(output);
-    }
-
-    public boolean pangramChecker(String sentence) {
-        sentence = sentence.toLowerCase();
-        char[] chars = sentence.toCharArray();
-
-        boolean[] histo = new boolean[26];
-
-        for (char aChar : chars) {
-            if (aChar >= 'a' && aChar <= 'z' && !histo[aChar - 'a']) {
-                histo[aChar - 'a'] = true;
-            }
-        }
-        return isAllTrue(histo);
-    }
-
     public static boolean isAllTrue(boolean[] array) {
         for (boolean b : array) {
             if (!b) {
@@ -44,21 +10,6 @@ public class Solutions {
             }
         }
         return true;
-    }
-
-    public static class Troll {
-        public static String disemvowel(String str) { // a e i o u
-            StringBuilder s = new StringBuilder();
-            for (int i = 0; i < str.length(); i++) {
-                if (str.charAt(i) != 'a' && str.charAt(i) != 'e' && str.charAt(i) != 'i' &&
-                        str.charAt(i) != 'u' && str.charAt(i) != 'o' && str.charAt(i) != 'A' &&
-                        str.charAt(i) != 'E' && str.charAt(i) != 'I' && str.charAt(i) != 'O' &&
-                        str.charAt(i) != 'U') {
-                    s.append(str.charAt(i));
-                }
-            }
-            return s.toString();
-        }
     }
 
     public static boolean validatePin(String pin) {
@@ -121,9 +72,65 @@ public class Solutions {
         return results;
     }
 
+    /**
+     * Your goal in this kata is to implement a difference function, which subtracts one list from another and returns the result.
+     * <p>
+     * It should remove all values from list a, which are present in list b keeping their order.
+     * <p>
+     * Kata.arrayDiff(new int[] {1, 2}, new int[] {1}) => new int[] {2}
+     * If a value is present in b, all of its occurrences must be removed from the other:
+     * <p>
+     * Kata.arrayDiff(new int[] {1, 2, 2, 2, 3}, new int[] {2}) => new int[] {1, 3}
+     */
     public static int[] arrayDiff(int[] a, int[] b) {
+        ArrayList<Integer> arrayA = new ArrayList<>();
+        for (int num : a) {
+            arrayA.add(num);
+        }
 
-        return a;
+        ArrayList<Integer> arrayB = new ArrayList<>();
+        for (int num : b) {
+            arrayB.add(num);
+        }
+
+        arrayA.removeAll(arrayB);
+
+        return arrayA.stream().mapToInt(i -> i).toArray();
     }
 
+    public String toJadeCase(String phrase) {
+        // using phrase == 0 used less memory
+        if (phrase == null || phrase.isEmpty()) {
+            return null;
+        }
+        // could split to char[] and then make uppercase each char preceded by space
+        String[] words = phrase.split(" ");
+        StringBuilder output = new StringBuilder();
+
+        for (int i = 0; i < words.length; i++) {
+            String first = String.valueOf(words[i].charAt(0));
+            first = first.toUpperCase();
+            words[i] = first + words[i].substring(1);
+            if (i == words.length - 1) {
+                output.append(words[i]);
+            } else {
+                output.append(words[i]).append(" ");
+            }
+        }
+        return new String(output);
+    }
+
+    public boolean pangramChecker(String sentence) {
+        sentence = sentence.toLowerCase();
+        char[] chars = sentence.toCharArray();
+
+        boolean[] histo = new boolean[26];
+
+        for (char aChar : chars) {
+            if (aChar >= 'a' && aChar <= 'z' && !histo[aChar - 'a']) {
+                histo[aChar - 'a'] = true;
+            }
+        }
+        return isAllTrue(histo);
+    }
 }

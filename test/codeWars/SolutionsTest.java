@@ -43,11 +43,13 @@ class SolutionsTest {
 
     @Test
     void arrayDiff() {
-        assertArrayEquals(new int[]{2}, Solutions.arrayDiff(new int[]{1, 2}, new int[]{1}));
-        assertArrayEquals(new int[]{2, 2}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{1}));
-        assertArrayEquals(new int[]{1}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{2}));
-        assertArrayEquals(new int[]{1, 2, 2}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{}));
-        assertArrayEquals(new int[]{}, Solutions.arrayDiff(new int[]{}, new int[]{1, 2}));
-
+        assertAll(
+                () -> assertArrayEquals(new int[]{2}, Solutions.arrayDiff(new int[]{1, 2}, new int[]{1})),
+                () -> assertArrayEquals(new int[]{2, 2}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{1})),
+                () -> assertArrayEquals(new int[]{1}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{2})),
+                () -> assertArrayEquals(new int[]{1, 2, 2}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{})),
+                () -> assertArrayEquals(new int[]{3, 5}, Solutions.arrayDiff(new int[]{1, 2, 2, 3, 5, 2}, new int[]{2, 1})),
+                () -> assertArrayEquals(new int[]{}, Solutions.arrayDiff(new int[]{}, new int[]{1, 2}))
+        );
     }
 }

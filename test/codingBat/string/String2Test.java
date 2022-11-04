@@ -31,7 +31,7 @@ class String2Test {
     }
 
     @Test
-    void testCounCode() {
+    void testCountCode() {
         assertAll("Testing",
                 () -> assertEquals(1,string2.countCode("code")),
                 () -> assertEquals(2,string2.countCode("coxecode")),
@@ -51,6 +51,13 @@ class String2Test {
     void testEndOther() {
         assertAll(
                 () -> assertFalse(string2.endOther("", ""))
+        );
+    }
+    @Test
+    void testSameStarChar() {
+        assertAll(
+                () -> assertFalse(string2.sameStarChar("a*a*b")),
+                () -> assertTrue(string2.sameStarChar("xy*yzz"))
         );
     }
 }
