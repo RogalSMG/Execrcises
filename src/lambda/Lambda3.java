@@ -1,13 +1,13 @@
 package lambda;
 
 public class Lambda3 {
-    LambdaInterfaceParameterDouble lambdaField;
+    LambdaInterfaceTwoParameter lambdaField;
 
-    public LambdaInterfaceParameterDouble getLambdaInterfaceParameterDouble() {
+    public LambdaInterfaceTwoParameter getLambdaInterfaceParameterDouble() {
         return lambdaField;
     }
 
-    public void setLambdaInterfaceParameterDouble(LambdaInterfaceParameterDouble lambdaField) {
+    public void setLambdaInterfaceParameterDouble(LambdaInterfaceTwoParameter lambdaField) {
         this.lambdaField = lambdaField;
     }
 
@@ -29,7 +29,7 @@ public class Lambda3 {
         System.out.println("---");
 
         // different interface used to create parameterDouble interface variable
-        LambdaInterfaceParameterDouble parameterDouble = (x, z) -> x * z;
+        LambdaInterfaceTwoParameter parameterDouble = (x, z) -> x * z;
         int result = parameterDouble.intMethodWithParam(4, 2);
         System.out.println(result);
 
@@ -47,7 +47,10 @@ public class Lambda3 {
 
         // change interface method by using class setter method
         lambda3.setLambdaInterfaceParameterDouble((x, z) -> x * z * 2);
+        // Calling method from class field
         System.out.println(lambda3.lambdaField.intMethodWithParam(4, 3));
+        // Calling interface method by class getter
+        System.out.println(lambda3.getLambdaInterfaceParameterDouble().intMethodWithParam(5,5));
 
     }
 }

@@ -111,4 +111,26 @@ public class Recursion1 {
             return 1 + countX(str.substring(1));
         } else return countX(str.substring(1));
     }
+
+    /**
+     * Given a string, compute recursively (no loops) the number of times lowercase "hi" appears in the string.
+     */
+    public int countHi(String str) {
+        if (!str.contains("hi")) {
+            return 0;
+        } else return 1 + countHi(str.substring(str.indexOf("hi") + 2));
+    }
+
+    /**
+     * Given a string, compute recursively (no loops) a new string where all the lowercase 'x' chars have been changed to 'y' chars.
+     */
+    public String changeXY(String str) {
+        if (str.isEmpty()) {
+            return "";
+        }
+
+        if (str.charAt(0) == 'x') {
+            return 'y' + changeXY(str.substring(1));
+        } else return str.charAt(0) + changeXY(str.substring(1));
+    }
 }

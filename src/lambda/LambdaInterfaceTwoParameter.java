@@ -1,5 +1,5 @@
 package lambda;
 
-public interface LambdaInterfaceParameterDouble {
+public interface LambdaInterfaceTwoParameter {
     int intMethodWithParam(int x, int z);
 }

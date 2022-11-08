@@ -39,7 +39,12 @@ public class Lambda5 {
         System.out.println(after2);
 
         // throwing NullPointerException, can not use interface variable type without assignment
-        ArgumentI iFunctionEmpty = null;
-        someFunc(iFunctionEmpty, "Empty function");
+        try {
+            ArgumentI iFunctionEmpty = null;
+            someFunc(iFunctionEmpty, "Empty function");
+        } catch (Exception e) {
+            System.out.println("Catch");
+        }
+        System.out.println("Still working");
     }
 }

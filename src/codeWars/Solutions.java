@@ -98,7 +98,41 @@ public class Solutions {
         return arrayA.stream().mapToInt(i -> i).toArray();
     }
 
-    public String toJadeCase(String phrase) {
+    /**
+     * Write a function, persistence, that takes in a positive parameter num and returns its multiplicative persistence,
+     * which is the number of times you must multiply the digits in num until you reach a single digit.
+     */
+    public static int persistence(long n) {
+        int[] ints = new int[]{};
+        int count = 0;
+        while (n >= 10) {
+            ints = toIntArray(n);
+            long multiply = 1;
+            for (int a : ints) {
+                multiply *= a;
+            }
+            n = multiply;
+            count++;
+        }
+        return count;
+    }
+
+    /**
+     * Helper method,
+     *
+     * @param a long value
+     * @return Array made of a prams separate digits
+     */
+    public static int[] toIntArray(long a) {
+        String nLong = Long.toString(a);
+        int[] digits = new int[nLong.length()];
+        for (int i = 0; i < nLong.length(); i++) {
+            digits[i] = Integer.parseInt(String.valueOf(nLong.charAt(i)));
+        }
+        return digits;
+    }
+
+    public static String toJadeCase(String phrase) {
         // using phrase == 0 used less memory
         if (phrase == null || phrase.isEmpty()) {
             return null;
@@ -120,7 +154,7 @@ public class Solutions {
         return new String(output);
     }
 
-    public boolean pangramChecker(String sentence) {
+    public static boolean pangramChecker(String sentence) {
         sentence = sentence.toLowerCase();
         char[] chars = sentence.toCharArray();
 

@@ -9,25 +9,22 @@ class SolutionsTest {
     @Test
     public void test1() {
         String pangram1 = "The quick brown fox jumps over the lazy dog.";
-        Solutions pc = new Solutions();
-        assertTrue(pc.pangramChecker(pangram1));
+        assertTrue(Solutions.pangramChecker(pangram1));
     }
 
     @Test
     public void test2() {
         String pangram2 = "You shall not pass!";
-        Solutions pc = new Solutions();
-        assertFalse(pc.pangramChecker(pangram2));
+        assertFalse(Solutions.pangramChecker(pangram2));
     }
 
     @Test
     public void testPangramCheckerMyself() {
-        Solutions sol = new Solutions();
         assertAll("Checking:",
-                () -> assertFalse(sol.pangramChecker("aa..")),
-                () -> assertFalse(sol.pangramChecker("abc efg hij klmn")),
-                () -> assertTrue(sol.pangramChecker("The quick brown fox jumps over the lazy dog.")),
-                () -> assertFalse(sol.pangramChecker("a.."))
+                () -> assertFalse(Solutions.pangramChecker("aa..")),
+                () -> assertFalse(Solutions.pangramChecker("abc efg hij klmn")),
+                () -> assertTrue(Solutions.pangramChecker("The quick brown fox jumps over the lazy dog.")),
+                () -> assertFalse(Solutions.pangramChecker("a.."))
         );
     }
 
@@ -50,6 +47,13 @@ class SolutionsTest {
                 () -> assertArrayEquals(new int[]{1, 2, 2}, Solutions.arrayDiff(new int[]{1, 2, 2}, new int[]{})),
                 () -> assertArrayEquals(new int[]{3, 5}, Solutions.arrayDiff(new int[]{1, 2, 2, 3, 5, 2}, new int[]{2, 1})),
                 () -> assertArrayEquals(new int[]{}, Solutions.arrayDiff(new int[]{}, new int[]{1, 2}))
+        );
+    }
+
+    @Test
+    void persistence() {
+        assertAll(
+                () -> assertEquals(3, Solutions.persistence(39))
         );
     }
 }
