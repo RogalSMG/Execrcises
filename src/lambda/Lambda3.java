@@ -54,15 +54,3 @@ public class Lambda3 {
 
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

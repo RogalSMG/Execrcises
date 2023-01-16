@@ -173,7 +173,7 @@ public class String2 {
      * @return true if one of both string contain another at very end position
      */
     public boolean endOther(String a, String b) {
-        if (a.isEmpty() || b.isEmpty()) {
+        if (a.isEmpty() || b.isBlank()) {
             return false;
         }
 
@@ -193,9 +193,61 @@ public class String2 {
      */
     public boolean sameStarChar(String str) {
         for (int i = 1; i < str.length() - 1; i++) {
-            if (str.charAt(i) == '*' && str.charAt(i -1) != str.charAt(i + 1))
+            if (str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1))
                 return false;
         }
         return true;
     }
+
+    /**
+     * Return a version of the given string, where for every star (*) in the string
+     * the star and the chars immediately to its left and right are gone. So "ab*cd" yields "ad" and "ab**cd" also yields "ad".
+     */
+    public String starOut(String str) {
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] == '*') {
+                //first loop where only two firs index were changed if at index 0 is *
+                if (i == 0) {
+                    chars[i] = ' ';
+                    if (i < chars.length - 1) {
+                        chars[i + 1] = ' ';
+                    }
+                    continue;
+                }
+
+                // case where are multiple * followed by each other
+                if (i < chars.length - 1 && chars[i + 1] == '*') {
+                    chars[i - 1] = ' ';
+
+                    do {
+                        chars[i] = ' ';
+                        i++;
+                    } while (i < chars.length && chars[i + 1] == '*');
+                    if (i != chars.length - 1) {
+                        chars[i + 1] = ' ';
+                    }
+                }
+
+                // normal case where
+                if (chars[i] == '*') {
+                    chars[i] = ' ';
+                    if (i < chars.length - 1) {
+                        chars[i + 1] = ' ';
+                    }
+                    chars[i - 1] = ' ';
+                    continue;
+                }
+            }
+        }
+
+        StringBuilder out = new StringBuilder();
+        for (char aChar : chars) {
+            if (aChar != ' ') {
+                out.append(aChar);
+            }
+        }
+        return out.toString();
+    }
 }
+

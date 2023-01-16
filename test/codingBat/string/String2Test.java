@@ -60,4 +60,11 @@ class String2Test {
                 () -> assertTrue(string2.sameStarChar("xy*yzz"))
         );
     }
+
+    @Test
+    void testStarOut() {
+        assertAll(
+                () -> assertEquals("",string2.starOut("a*"))
+        );
+    }
 }

@@ -26,6 +26,10 @@ public class SudokuSolver {
         printBoard(board);
     }
 
+    /**
+     * Method witch print a board
+     * @param board given int[][] to print
+     */
     static void printBoard(int[][] board) {
         for (int i = 0; i < GRID_SIZE; i++) {
             if (i % 3 == 0 && i != 0) {
@@ -42,6 +46,13 @@ public class SudokuSolver {
         System.out.println();
     }
 
+    /**
+     * Helper method check if there is given number in specified row in given int[][]
+     * @param board given sudoku board
+     * @param row number of row
+     * @param number given number to check if it is present
+     * @return true if is present
+     */
     static boolean isNumberInRow(int[][] board, int row, int number) {
         for (int i = 0; i < GRID_SIZE; i++) {
             if (board[row][i] == number) {
@@ -51,6 +62,13 @@ public class SudokuSolver {
         return false;
     }
 
+    /**
+     * Helper method check if there is given number in specified column in given int[][]
+     * @param board given sudoku board
+     * @param colum number of colum
+     * @param number given number to check if it is present
+     * @return true if is present, otherwise false
+     */
     static boolean isNumberInColumn(int[][] board, int colum, int number) {
         for (int i = 0; i < GRID_SIZE; i++) {
             if (board[i][colum] == number) {
@@ -60,6 +78,14 @@ public class SudokuSolver {
         return false;
     }
 
+    /**
+     * Helper method check if the given number is present is 3x3 square of given int[][]
+     * @param board given sudoku board
+     * @param row given row
+     * @param column given column
+     * @param number given number to check if it is present
+     * @return true if it is present, if not false
+     */
     static boolean isNumberInSquare(int[][] board, int row, int column, int number) {
         row = row - row % 3;
         column = column - column % 3;
@@ -73,12 +99,25 @@ public class SudokuSolver {
         return false;
     }
 
+    /**
+     * Helper method which check if given number cen be placed in specified place
+     * @param board given int[][]
+     * @param row given row
+     * @param column given column
+     * @param number given int to check
+     * @return true if place is valid
+     */
     static boolean isValidPlace(int[][] board, int row, int column, int number) {
         return !isNumberInRow(board, row, number)
                 && !isNumberInColumn(board, column, number)
                 && !isNumberInSquare(board, row, column, number);
     }
 
+    /**
+     * Method witch will solve sudoku. Int[][] variable is
+     * @param board given int[][] represented sudoku
+     * @return True if successfully put number in exact place
+     */
     static boolean solveSudoku(int[][] board) {
         for (int i = 0; i < GRID_SIZE; i++) {
             for (int j = 0; j < GRID_SIZE; j++) {

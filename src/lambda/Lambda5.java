@@ -22,7 +22,7 @@ public class Lambda5 {
             return String.valueOf(chars);
         }, "Ala has a cat!");
 
-        System.out.println(after);
+        System.out.println(after); // print Blb iat b dau!
 
         // declare interface type variable and initialize (first assignment) with function
         ArgumentI iFunction = str -> {
@@ -35,8 +35,8 @@ public class Lambda5 {
             return String.valueOf(chars);
         };
 
-        String after2 = someFunc(iFunction, after);
-        System.out.println(after2);
+        after = someFunc(iFunction, after);
+        System.out.println(after); // print Ala has a cat!
 
         // throwing NullPointerException, can not use interface variable type without assignment
         try {
