@@ -69,7 +69,7 @@ public class SolvingPatternsTrick {
     }
 
     static void pattern17(int n) {
-        for (int row = 1; row <= 2 * n ; row++) {
+        for (int row = 1; row <= 2 * n; row++) {
             int numberOfColumn = row > n ? 2 * n - row : row;
 
             for (int s = 0; s < n - numberOfColumn; s++) {
