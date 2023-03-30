@@ -27,7 +27,7 @@ public class SudokuSolver {
     }
 
     /**
-     * Method witch print a board
+     * Method witch print a board.
      * @param board given int[][] to print
      */
     static void printBoard(int[][] board) {
@@ -47,7 +47,7 @@ public class SudokuSolver {
     }
 
     /**
-     * Helper method check if there is given number in specified row in given int[][]
+     * Helper method check if there is given number in specified row in given int[][].
      * @param board given sudoku board
      * @param row number of row
      * @param number given number to check if it is present
@@ -63,7 +63,7 @@ public class SudokuSolver {
     }
 
     /**
-     * Helper method check if there is given number in specified column in given int[][]
+     * Helper method check if there is given number in specified column in given int[][].
      * @param board given sudoku board
      * @param colum number of colum
      * @param number given number to check if it is present
@@ -79,7 +79,7 @@ public class SudokuSolver {
     }
 
     /**
-     * Helper method check if the given number is present is 3x3 square of given int[][]
+     * Helper method check if the given number is present is 3x3 square of given int[][].
      * @param board given sudoku board
      * @param row given row
      * @param column given column
@@ -100,7 +100,7 @@ public class SudokuSolver {
     }
 
     /**
-     * Helper method which check if given number cen be placed in specified place
+     * Helper method which check if given number cen be placed in specified place.
      * @param board given int[][]
      * @param row given row
      * @param column given column
@@ -114,8 +114,8 @@ public class SudokuSolver {
     }
 
     /**
-     * Method witch will solve sudoku. Int[][] variable is
-     * @param board given int[][] represented sudoku
+     * Method witch will solve sudoku.
+     * @param board given int[][] represented sudoku grid
      * @return True if successfully put number in exact place
      */
     static boolean solveSudoku(int[][] board) {
