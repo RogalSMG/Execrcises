@@ -9,6 +9,8 @@ public class Main {
 
         int[] sum = Solutions.getSum(new int[][]{{12, 44}, {10, 11}, {93, 129}, {4, 6}, {40, 39}, {1, 0}});
 
+        System.out.println("Git test");
+
 //        Tablice.displayArray(array);
 //        IfWhile.insertionSorting(array);
 //        Tablice.displayArray(array);
@@ -20,7 +22,5 @@ public class Main {
 //        MyNumber myNumber = new MyNumber(4);
 //        myNumber = myNumber.pow(new MyNumber(3));
 
-//        double noe = Double.parseDouble(myNumber.toString());
-//        System.out.println(noe);
     }
 }
